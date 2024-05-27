@@ -1,13 +1,13 @@
 CREATE TABLE homework
 (
-    id          smallserial PRIMARY KEY,
+    id          smallint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name        varchar(30) NOT NULL,
     description text        NOT NULL
 );
 
 CREATE TABLE lesson
 (
-    id          smallserial PRIMARY KEY,
+    id          smallint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name        varchar(30) NOT NULL,
     updated_at  timestamp   NOT NULL DEFAULT NOW(),
     homework_id smallint REFERENCES homework (id) ON DELETE CASCADE
@@ -15,7 +15,7 @@ CREATE TABLE lesson
 
 CREATE TABLE schedule
 (
-    id         smallserial PRIMARY KEY,
+    id         smallint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name       varchar(30) NOT NULL,
     updated_at timestamp   NOT NULL DEFAULT NOW()
 );
