@@ -20,7 +20,7 @@ CREATE TABLE schedule
     updated_at timestamp   NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE lesson_in_schedule
+CREATE TABLE lesson_schedule
 (
     schedule_id smallint REFERENCES schedule (id) ON DELETE CASCADE,
     lesson_id   smallint REFERENCES lesson (id) ON DELETE CASCADE,
